@@ -1,0 +1,95 @@
+NOTICE
+======
+
+airsim-uav-3d-detection
+Copyright (c) 2025-2026 Eric Ezequiel Yoshida de Lima
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.  See the LICENSE file for the full text.
+
+
+Licence history
+---------------
+
+Every commit on this repository's main branch is AGPL-3.0-or-later.  There is no
+MIT-licensed commit on that branch, so no "MIT release remains valid for earlier
+commits" carve-out applies to it.
+
+There was an earlier MIT release, and it was a release of *this same repository*.
+This repository was created in the author's personal namespace as
+`ericyoshida/airsim-uav-3d-detection` and was later transferred into the
+FLYMOV-ERC organisation; the transfer moved the repository, it did not fork or
+re-publish it, and GitHub's permanent redirect from the former path is in place.
+Under that former name, the working tree was published under the MIT licence on
+6 June 2026 as a single flat commit (2fddc2c, 243 files, `LICENSE` = MIT,
+Copyright (c) 2026 Eric Ezequiel Yoshida de Lima).  That commit is preserved here
+under the tag
+
+    archive/flat-dump-2026-06
+
+The branch `main` was afterwards rewritten as a fresh root commit, so the tagged
+commit is not an ancestor of `main`: one repository, two disjoint histories -- the
+tag holding the MIT-licensed flat dump, `main` holding the AGPL-3.0 reorganisation
+of it.  Anyone who obtained a copy under the MIT terms keeps their MIT rights to
+that copy, and nothing here revokes them.
+
+Disclosure about the archived commit: the tree at `archive/flat-dump-2026-06` is
+the unedited June 2026 dump and still carries absolute developer-machine paths
+(43 lines across 27 files hard-code the author's home working directories, in
+POSIX form and, in one file, in the Windows/WSL form of the same directory).  It
+is kept, unmodified and unredacted, solely so that the artifact the MIT grant
+attaches to remains verifiable; nothing on `main` reads or reproduces those
+paths.
+
+Why this tree is AGPL-3.0: it ships code that imports Ultralytics YOLO, which is
+itself licensed AGPL-3.0.  The two-dimensional detection stage is built on it.
+Twelve modules import `ultralytics` directly, and seven more reach it
+transitively through `common/pipeline.py`.  Distributing a combined work that
+links an AGPL-3.0 library under MIT is not permitted by that licence, so this
+tree was brought into line with its strongest dependency rather than the other
+way round.  The alternative -- isolating every Ultralytics import behind an optional
+extra so that an MIT core never links it -- was considered and rejected as
+misleading, since the pipeline the dissertation describes does not function
+without the YOLO stage.
+
+
+Third-party components
+----------------------
+
+Ultralytics YOLO (YOLOv11)
+    https://github.com/ultralytics/ultralytics
+    Licence: AGPL-3.0-or-later.
+    Used by the 2D detection stage (detection/yolo/) and by every script that
+    runs the full pipeline.  A commercial Ultralytics Enterprise Licence is
+    available from Ultralytics for users who cannot accept AGPL terms; this
+    repository does not grant one.
+
+Microsoft AirSim / Cosys-AirSim
+    https://github.com/microsoft/AirSim
+    https://github.com/Cosys-Lab/Cosys-AirSim
+    Licence: MIT.
+    The simulator and its Python client (`cosysairsim`).  No AirSim source is
+    vendored here; configs/settings.json is a configuration file for it.
+
+PyTorch, NumPy, OpenCV, SciPy, Matplotlib, tqdm, PyYAML
+    Licences: BSD-3-Clause (PyTorch, NumPy, SciPy), Apache-2.0 (OpenCV 4.5+),
+    PSF-style (Matplotlib), MIT (tqdm, PyYAML).
+
+py-motmetrics
+    https://github.com/cheind/py-motmetrics
+    Licence: MIT.  Used for the CLEAR-MOT figures in evaluation/metrics.py.
+
+Unreal Engine environments (AirSimNH, CityEnviron, CityPark / Coastline)
+    Distributed by Microsoft as pre-built AirSim environment binaries under
+    their own terms.  They are not redistributed here.
+
+
+What is NOT covered
+-------------------
+
+No dataset, no recorded session, no trained weight file and no detection dump is
+included in this repository (see .gitignore and the "What is deliberately not
+included" section of README.md).  Any such artifact obtained elsewhere carries
+whatever terms its publisher attached to it.

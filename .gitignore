@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# Datasets, recorded sessions, trained weights and generated media stay local.
+# Nothing in this list is ever committed; see README.md for how to regenerate.
+# ---------------------------------------------------------------------------
+
+# Imagery and point clouds
+*.png
+*.jpg
+*.jpeg
+*.npy
+*.npz
+*.pcd
+*.ply
+*.las
+
+# Trained weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.weights
+*.mat
+*.pkl
+
+# Video and recordings
+*.mp4
+*.avi
+*.mov
+*.gif
+*.bag
+*.db3
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Generated documents
+*.pdf
+
+# Data directories (any depth).
+# Note the negations: dataset_generation/ and archive/dataset_generators/ are
+# SOURCE directories, not data, and must not be swept up by the dataset* glob.
+dataset*/
+!dataset_generation/
+!archive/dataset_generators/
+datasets/
+sessions/
+session_rec*/
+det_dumps*/
+dumps/
+inference_output*/
+backgrounds*/
+sprites*/
+final_visualization/
+tracking_output/
+runs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+venv/
+.venv/
+env/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.backup
+*.tracker_backup
+
+# Machine-local configuration overriding configs/default.yaml
+configs/local.yaml

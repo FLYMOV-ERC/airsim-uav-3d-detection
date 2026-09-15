@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "airsim-uav-3d-detection: synthetic aerial dataset generation and camera-point-cloud 3D detection for UAV sense-and-avoid"
+message: "If you use this software, please cite both the software and the dissertation it accompanies."
+type: software
+authors:
+  - given-names: "Eric Ezequiel Yoshida"
+    family-names: "de Lima"
+    affiliation: "Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, Brazil"
+repository-code: "https://github.com/FLYMOV-ERC/airsim-uav-3d-detection"
+license: AGPL-3.0-or-later
+abstract: >-
+  Code for Chapter 7 of the master's dissertation "Object Detection and Tracking
+  Using an Unmanned Aerial Vehicle": generation of a fully
+  annotated synthetic aerial dataset in AirSim, a two-stage
+  YOLO -> frustum -> PointNet++ 3D detector, single-stage voxel baselines
+  (PointPillars, PointPillars-PFN, dense 3D voxel), a late fusion of the two, and
+  the SORT + per-track Extended Kalman Filter tracking stage used to evaluate
+  them end to end.
+keywords:
+  - UAV
+  - sense and avoid
+  - 3D object detection
+  - frustum PointNet
+  - PointPillars
+  - AirSim
+  - synthetic dataset
+  - multi-object tracking
+  - extended Kalman filter
+references:
+  - type: thesis
+    title: "Object Detection and Tracking Using an Unmanned Aerial Vehicle"
+    authors:
+      - given-names: "Eric Ezequiel Yoshida"
+        family-names: "de Lima"
+    thesis-type: "Master's thesis"
+    institution:
+      name: "Instituto Tecnológico de Aeronáutica (ITA)"
+    # Defended 28 July 2026 before the examining board at ITA.
+    month: 7
+    year: 2026

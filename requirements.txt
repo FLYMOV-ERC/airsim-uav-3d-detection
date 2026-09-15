@@ -1,0 +1,50 @@
+# Python 3.10 is the version the experiments of Chapter 7 were run on.
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Install PyTorch separately if you need a specific CUDA build; the experiments
+# used a CUDA build on an NVIDIA RTX 4080 laptop GPU.  See
+# https://pytorch.org/get-started/locally/ for the right wheel index.
+#
+# Version floors, not pins: these are the lowest versions the code is known to
+# work with.  No upper bounds are asserted because none were tested.
+
+# --- core numerics -------------------------------------------------------
+numpy>=1.24
+scipy>=1.10
+
+# --- deep learning -------------------------------------------------------
+torch>=2.0
+# Ultralytics YOLO is AGPL-3.0; it is why this repository is AGPL-3.0. See NOTICE.
+ultralytics>=8.3.0
+
+# --- imaging -------------------------------------------------------------
+opencv-python>=4.7
+
+# --- metrics -------------------------------------------------------------
+motmetrics>=1.4          # CLEAR-MOT (MOTA, IDF1, MT/ML, ID switches)
+pandas>=1.5              # required by motmetrics
+
+# --- plotting and figures ------------------------------------------------
+matplotlib>=3.6
+
+# --- utilities -----------------------------------------------------------
+pyyaml>=6.0              # configs/default.yaml
+tqdm>=4.64
+
+# --- AirSim client -------------------------------------------------------
+# Only needed to talk to a running simulator.  Six modules import it and fail
+# without it, all of them live-simulator tools:
+#     dataset_generation/collect_airsim.py, flight.py, measure_quadrotor.py,
+#     record_campaign.py, synthetic/capture_sprites.py, synthetic/capture_backgrounds.py
+# Everything downstream of a recorded session -- pc_cache, the frustum and voxel
+# trainers, dump_detections, dump_voxel, fuse_dumps, metrics, metrics_ekf,
+# driver_ekf, harness, the figure script and the EKF test -- imports and runs
+# with cosysairsim absent, because common/pipeline.py guards the import
+# (see common/airsim_optional.py).
+# cosysairsim is the Cosys-Lab fork of the Microsoft AirSim Python client.
+cosysairsim>=3.3.0
+
+# --- tests ---------------------------------------------------------------
+pytest>=7.0

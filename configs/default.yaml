@@ -1,0 +1,74 @@
+# Default runtime configuration.
+#
+# Every value here can be overridden in three ways, in increasing priority:
+#   1. this file;
+#   2. an alternative YAML file pointed at by the AIRSIM_UAV_CONFIG environment
+#      variable, or passed with --config on the scripts that accept it;
+#   3. an explicit command-line flag (--host, --port, --data-root, ...).
+#
+# Nothing in this repository stores an absolute path to a developer machine.
+# Data locations are resolved relative to `paths.data_root`, which defaults to
+# the current working directory.
+
+airsim:
+  # Host running the AirSim/Unreal binary and its RPC server.
+  #
+  # Use "127.0.0.1" when the Python client and the simulator run on the same
+  # machine.  The experiments of Chapter 7 ran the client under WSL2 and the
+  # simulator on the Windows host, in which case this must be the address of
+  # the Windows host as seen from WSL -- obtain it with
+  #     ip route show | awk '/^default/ {print $3}'
+  # (it changes between reboots).  The simulator side must be started with
+  # "LocalHostIp": "0.0.0.0" in settings.json for a non-loopback client to
+  # connect; see configs/settings.json.
+  host: "127.0.0.1"
+  port: 41451
+
+  # Vehicle names as declared in configs/settings.json.  The ego platform
+  # carries the sensor suite; the targets carry the VisQuad visual mesh.
+  ego_vehicle: "Ego"
+  target_vehicles: ["Drone3", "Drone4", "Intruder1"]
+
+  # simSetVehiclePose writes a pose RELATIVE to the vehicle's spawn origin,
+  # while simGetObjectPose reports a global pose.  These origins, which must
+  # match the "X"/"Y"/"Z" fields of configs/settings.json, are added back to
+  # recover a global pose (common/drone_visual.py: vehicle_to_global).
+  # NED metres.
+  vehicle_origins:
+    Ego:       [0.0, 0.0, -5.0]
+    Drone3:    [15.0, -5.0, -5.0]
+    Drone4:    [15.0, 5.0, -5.0]
+    Intruder1: [-15.0, 0.0, -5.0]
+
+camera:
+  # Must agree with the front_center CaptureSettings of configs/settings.json.
+  width: 1280
+  height: 720
+  fov_degrees: 90
+  # Lever arm from the body origin to the optical centre, body FRD metres,
+  # and the fixed downward tilt.  Must agree with the camera "X"/"Y"/"Z"/"Pitch"
+  # of configs/settings.json.
+  offset_body: [0.35, 0.0, -0.5]
+  pitch_degrees: -15.0
+  # Depth returns outside this interval are discarded when back-projecting.
+  min_depth: 0.1
+  max_depth: 250.0
+
+target:
+  # VisQuad: the Quadrotor1 mesh attached to every target, uniform scale.
+  visual_mesh: "Quadrotor1"
+  visual_mesh_scale: 4.0
+  # Axis-aligned full extents of the scaled mesh, measured in-simulator by
+  # dataset_generation/measure_quadrotor.py (metres, x=forward y=right z=down).
+  extents: [3.01, 3.93, 2.79]
+  # Margin covering the spinning rotors that the simulator's AABB omits.
+  rotor_margin: 1.38
+
+paths:
+  # Root under which all datasets, recorded sessions, training runs and
+  # detection dumps live.  "." means the current working directory.
+  data_root: "."
+  datasets: "datasets"
+  sessions: "sessions"
+  runs: "runs"
+  dumps: "dumps"
