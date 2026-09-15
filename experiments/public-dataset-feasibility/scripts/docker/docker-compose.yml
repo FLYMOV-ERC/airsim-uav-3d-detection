@@ -1,0 +1,20 @@
+# Mounts the project root -- the directory holding README.md, scripts/ and
+# results/ -- at /workspace inside the ROS Noetic container. The compose file
+# lives two levels below that root, hence the ../.. below; the build context
+# stays at this directory because the Dockerfile sits here.
+#
+# Inside the container the scripts are therefore at /workspace/scripts/*.py.
+# Put the rosbags anywhere under the project root (*.bag is gitignored) and
+# pass them with --bag.
+services:
+  ros-yolo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros-yolo-container
+    working_dir: /workspace
+    volumes:
+      - ../..:/workspace
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    tty: true

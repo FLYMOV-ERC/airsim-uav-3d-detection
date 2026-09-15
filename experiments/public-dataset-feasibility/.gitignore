@@ -1,0 +1,51 @@
+# Nothing below belongs in this evidence subtree. The frame dumps, the rosbags
+# and the checkpoints are regenerable or third-party; see the README section
+# "What is deliberately not included, and why".
+
+# Model checkpoints and exported models
+*.pt
+*.pth
+*.onnx
+*.torchscript
+*.engine
+
+# Raw recordings and rendered video
+*.bag
+*.db3
+*.mp4
+*.mov
+*.avi
+
+# Bulk binary data
+*.mat
+*.pkl
+*.npy
+*.npz
+*.h5
+
+# Frame dumps and dataset imagery. The handful of figures and Ultralytics plots
+# that are published are force-added; everything else stays out.
+extracted_images/
+output_images/
+output_images*/
+debug_images/
+datasets/
+runs/
+
+# Environments and build output
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+build/
+install/
+log/
+node_modules/
+
+# Editor and OS cruft
+.DS_Store
+*.backup
+*.tracker_backup
+.claude/
+.ipynb_checkpoints/

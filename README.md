@@ -76,7 +76,23 @@ tests/                    the two tests that run without a simulator
 docs/                     methodology, the compiled technical report, results, setup guides
 archive/                  54 superseded variants, kept as provenance — five of them are still
                   imported by the working pipeline; see archive/README.md
+experiments/              the prior question: whether any public dataset made this one
+                  unnecessary. See experiments/public-dataset-feasibility/
 ```
+
+### Why a synthetic dataset at all
+
+Before any of this was built, two public routes were tried and closed.
+VisDrone2019-DET has no airborne-vehicle class — its ten classes are pedestrian,
+people, bicycle, car, van, truck, tricycle, awning-tricycle, bus and motor — and
+NTU VIRAL's ground truth is the carrying vehicle's own Leica-prism pose, not the
+pose of anything it observes. Neither can supervise a detector for an aircraft
+seen from another aircraft. A third route, training on a real recording of a
+quadrotor, produced a detector that scored mAP50 0.995 on held-out frames of its
+own session and then found nothing at all in a second session of the same
+aircraft. `experiments/public-dataset-feasibility/` carries the scripts, the run
+records and the measurements behind those three results, including a retraction
+of an earlier reading of the third one.
 
 ---
 
@@ -319,9 +335,9 @@ Neither has been converted to pytest assertions yet; both print their results an
 `tracking/ekf_3d.py` is a direct port of the MATLAB `ekf_filter.m` of Chapter 5 —
 the seven-state model `[x, y, z, ẋ, ẏ, ż, r]`, constant velocity with white
 acceleration process noise, spherical measurement with its Jacobian — reused here
-unmodified, one filter per track. It is the single most imported module in this
-repository and it is where the detection front-end of Chapter 7 joins the tracker
-of Chapter 5. The monocular tracker of Chapter 6 is a variant of the same
+unmodified, one filter per track. It is where the detection front-end of
+Chapter 7 joins the tracker of Chapter 5, and it is imported by 18 modules here
+(the most imported module in the repository is `common/config.py`, at 39). The monocular tracker of Chapter 6 is a variant of the same
 framework adapted to a bearing-only measurement, not this identical filter.
 
 ---

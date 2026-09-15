@@ -37,11 +37,12 @@ that copy, and nothing here revokes them.
 
 Disclosure about the archived commit: the tree at `archive/flat-dump-2026-06` is
 the unedited June 2026 dump and still carries absolute developer-machine paths
-(43 lines across 27 files hard-code the author's home working directories, in
-POSIX form and, in one file, in the Windows/WSL form of the same directory).  It
-is kept, unmodified and unredacted, solely so that the artifact the MIT grant
-attaches to remains verifiable; nothing on `main` reads or reproduces those
-paths.
+(46 lines across 27 files hard-code the author's own working directories under
+two of his machine usernames: a POSIX home directory, and, in three files, a
+separate Windows/OneDrive path).  No third-party data and no credentials are
+involved.  It is kept, unmodified and unredacted, solely so that the artifact the
+MIT grant attaches to remains verifiable; nothing on `main` reads or reproduces
+those paths.
 
 Why this tree is AGPL-3.0: it ships code that imports Ultralytics YOLO, which is
 itself licensed AGPL-3.0.  The two-dimensional detection stage is built on it.

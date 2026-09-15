@@ -1,0 +1,17 @@
+run,data_yaml,model,device,epochs_requested,epochs_completed,weight_files,wall_s_last_epoch,final_precision,final_recall,final_mAP50,final_mAP50_95,best_mAP50
+yolov8_holybro,./datasets/holybro/yolo_dataset/data.yaml,yolov8n.yaml,cpu,100,0,0,,,,,,
+yolov8_holybro2,./datasets/holybro/yolo_dataset/data.yaml,yolov8n.yaml,mps,100,0,0,,,,,,
+yolov8_holybro3,./datasets/holybro/yolo_dataset/data.yaml,yolov8n.yaml,mps,100,100,2,3875.68,0.99939,1,0.995,0.63815,0.99500
+yolov8_visdrone,./visdrone.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone10,./datasets/VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone2,./VisDrone2019-DET-train/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone3,./VisDrone2019-DET-train/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone4,./VisDrone2019-DET-train/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone5,./VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone52,./VisDrone2019-DET/data.yaml,yolov8n.yaml,mps,100,0,0,,,,,,
+yolov8_visdrone53,./datasets/VisDrone2019-DET/data.yaml,yolov8n.yaml,mps,100,7,2,4045.35,0.00017,0.00032,8e-05,2e-05,0.00038
+yolov8_visdrone54,./datasets/VisDrone2019-DET/data.yaml,yolov8n.yaml,cpu,100,0,0,,,,,,
+yolov8_visdrone6,./VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone7,./dataset/VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone8,./datasets/VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
+yolov8_visdrone9,./datasets/VisDrone2019-DET/data.yaml,yolov8n.yaml,null,100,0,0,,,,,,
