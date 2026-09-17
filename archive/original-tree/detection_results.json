@@ -1,0 +1,12 @@
+{
+  "results": {
+    "front_center_*": 5,
+    "front_center_*drone*": 1
+  },
+  "best_config": {
+    "camera": "front_center",
+    "image_type": "0",
+    "pattern": "*",
+    "max_detections": 5
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "SettingsVersion": 1.2,
+  "LocalHostIp": "0.0.0.0",
+  "ApiServerPort": 41451,
+  "SimMode": "Multirotor",
+  "ClockSpeed": 1.0,
+  "ViewMode": "SpringArmChase",
+  "Vehicles": {
+    "Ego": {
+      "VehicleType": "SimpleFlight",
+      "X": 0,
+      "Y": 0,
+      "Z": -2,
+      "Yaw": 0,
+      "Cameras": {
+        "front_center": {
+          "CaptureSettings": [
+            {
+              "ImageType": 0,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            },
+            {
+              "ImageType": 5,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            }
+          ],
+          "X": -0.35,
+          "Y": 0,
+          "Z": -10.256,
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 0
+        },
+        "back_center": {
+          "CaptureSettings": [
+            {
+              "ImageType": 0,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            },
+            {
+              "ImageType": 5,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            }
+          ],
+          "X": 0.35,
+          "Y": 0,
+          "Z": -10.256,
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 180
+        },
+        "bottom_center": {
+          "CaptureSettings": [
+            {
+              "ImageType": 0,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            },
+            {
+              "ImageType": 5,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            }
+          ],
+          "X": 0,
+          "Y": 0,
+          "Z": -9.5,
+          "Pitch": -90,
+          "Roll": 0,
+          "Yaw": 0
+        }
+      },
+      "Sensors": {
+        "LidarFront": {
+          "SensorType": 6,
+          "Enabled": true,
+          "NumberOfChannels": 32,
+          "RotationsPerSecond": 10,
+          "PointsPerSecond": 100000,
+          "VerticalFOVUpper": 10,
+          "VerticalFOVLower": -30,
+          "HorizontalFOVStart": -180,
+          "HorizontalFOVEnd": 180,
+          "X": 0,
+          "Y": 0,
+          "Z": -10.5,
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 0,
+          "DrawDebugPoints": false,
+          "DataFrame": "VehicleInertialFrame"
+        }
+      }
+    },
+    "Intruder1": {
+      "VehicleType": "SimpleFlight",
+      "X": -20,
+      "Y": 0,
+      "Z": -2,
+      "Yaw": 180,
+      "AutoCreate": true
+    },
+    "Intruder2": {
+      "VehicleType": "SimpleFlight",
+      "X": 10,
+      "Y": 15,
+      "Z": -5,
+      "Yaw": -45,
+      "AutoCreate": true
+    },
+    "Intruder3": {
+      "VehicleType": "SimpleFlight",
+      "X": 10,
+      "Y": -15,
+      "Z": -8,
+      "Yaw": 45,
+      "AutoCreate": true
+    },
+    "Intruder4": {
+      "VehicleType": "SimpleFlight",
+      "X": -10,
+      "Y": 10,
+      "Z": -3,
+      "Yaw": 90,
+      "AutoCreate": true
+    }
+  },
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 1280,
+        "Height": 720,
+        "FOV_Degrees": 90,
+        "TargetGamma": 1.5,
+        "MotionBlurAmount": 0
+      }
+    ],
+    "Gimbal": {
+      "Stabilization": 0,
+      "Pitch": 0,
+      "Roll": 0,
+      "Yaw": 0
+    }
+  },
+  "SegmentationSettings": {
+    "InitMethod": "CommonObjectsRandomIDs",
+    "MeshNamingMethod": "StaticMeshComponentName"
+  },
+  "Recording": {
+    "RecordOnMove": false,
+    "RecordInterval": 0.05
+  }
+}

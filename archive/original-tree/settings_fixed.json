@@ -1,0 +1,62 @@
+{
+  "SettingsVersion": 2.0,
+  "SimMode": "Multirotor",
+  "LocalHostIp": "0.0.0.0",
+  "ApiServerPort": 41451,
+  "ClockSpeed": 1,
+
+  "Vehicles": {
+    "Ego": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "IsFpvVehicle": true,
+      "Cameras": {
+        "front_center": {
+          "X": 0.35, "Y": 0.0, "Z": -0.5,
+          "Pitch": -15, "Roll": 0, "Yaw": 0,
+          "CaptureSettings": [
+            { "ImageType": 0, "Width": 1280, "Height": 720, "FOV_Degrees": 90 },
+            { "ImageType": 5, "Width": 1280, "Height": 720, "FOV_Degrees": 90 },
+            { "ImageType": 2, "Width": 1280, "Height": 720, "FOV_Degrees": 90 }
+          ]
+        }
+      },
+
+      "Sensors": {
+        "LidarFront": {
+          "SensorType": 6,
+          "Enabled": true,
+          "NumberOfChannels": 64,
+          "PointsPerSecond": 2000000,
+          "RotationsPerSecond": 10,
+          "X": 0.35, "Y": 0.0, "Z": -0.5,
+          "Pitch": -15, "Roll": 0, "Yaw": 0,
+          "VerticalFOVUpper": 30, "VerticalFOVLower": -60,
+          "HorizontalFOVStart": -90, "HorizontalFOVEnd": 90,
+          "Range": 150,
+          "DrawDebugPoints": true,
+          "IgnoreMarked": false,
+          "DataFrame": "VehicleInertialFrame"
+        }
+      }
+    },
+
+    "Intruder1": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": -20, "Y": 0, "Z": -2, "Yaw": 180
+    },
+
+    "Drone3": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": 20, "Y": 0, "Z": -2
+    },
+
+    "Drone4": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": -20, "Y": 10, "Z": -2
+    }
+  }
+}

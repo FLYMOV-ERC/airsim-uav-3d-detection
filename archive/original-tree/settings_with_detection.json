@@ -1,0 +1,81 @@
+{
+  "SettingsVersion": 2.0,
+  "SimMode": "Multirotor",
+  "LocalHostIp": "0.0.0.0",
+  "ApiServerPort": 41451,
+
+  "SegmentationSettings": {
+    "InitMethod": "CommonObjectsRandomIDs",
+    "MeshNamingMethod": "StaticMeshAssetFileName"
+  },
+
+  "Vehicles": {
+    "Ego": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "IsFpvVehicle": true,
+      "Cameras": {
+        "front_center": {
+          "X": 0.35, "Y": 0.0, "Z": -0.5,
+          "Pitch": -15, "Roll": 0, "Yaw": 0,
+          "CaptureSettings": [
+            { "ImageType": 0, "Width": 1280, "Height": 720, "FOV_Degrees": 90 },
+            { "ImageType": 5, "Width": 1280, "Height": 720, "FOV_Degrees": 90 },
+            { "ImageType": 2, "Width": 1280, "Height": 720, "FOV_Degrees": 90 }
+          ]
+        }
+      },
+
+      "Sensors": {
+        "LidarFront": {
+          "SensorType": 6,
+          "Enabled": true,
+          "NumberOfChannels": 64,
+          "PointsPerSecond": 1000000,
+          "RotationsPerSecond": 20,
+          "X": 0.35, "Y": 0.0, "Z": -0.5,
+          "VerticalFOVUpper": 45,
+          "VerticalFOVLower": -45,
+          "HorizontalFOVStart": -90,
+          "HorizontalFOVEnd": 90,
+          "Range": 150,
+          "DrawDebugPoints": true,
+          "IgnoreMarked": false,
+          "DataFrame": "VehicleInertialFrame"
+        }
+      }
+    },
+
+    "Intruder1": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": -20, "Y": 0, "Z": -2, "Yaw": 180,
+      "Sensors": {}
+    },
+
+    "Drone3": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": 20, "Y": 0, "Z": -2,
+      "Sensors": {}
+    },
+
+    "Drone4": {
+      "VehicleType": "SimpleFlight",
+      "AutoCreate": true,
+      "X": -20, "Y": 10, "Z": -2,
+      "Sensors": {}
+    }
+  },
+
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 5,
+        "Width": 1280,
+        "Height": 720,
+        "TargetGamma": 1.0
+      }
+    ]
+  }
+}

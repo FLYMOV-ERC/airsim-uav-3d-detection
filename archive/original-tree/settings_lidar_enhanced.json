@@ -1,0 +1,97 @@
+{
+  "SettingsVersion": 1.2,
+  "SimMode": "Multirotor",
+  "ClockSpeed": 1.0,
+  "ViewMode": "SpringArmChase",
+  "Vehicles": {
+    "Ego": {
+      "VehicleType": "SimpleFlight",
+      "X": 0,
+      "Y": 0,
+      "Z": -2,
+      "Yaw": 0,
+      "Cameras": {
+        "front_center": {
+          "CaptureSettings": [
+            {
+              "ImageType": 0,
+              "Width": 1280,
+              "Height": 720,
+              "FOV_Degrees": 90
+            }
+          ],
+          "X": 0.2,
+          "Y": 0,
+          "Z": -0.1,
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 0
+        }
+      },
+      "Sensors": {
+        "LidarFront": {
+          "SensorType": 6,
+          "Enabled": true,
+          "NumberOfChannels": 64,
+          "RotationsPerSecond": 20,
+          "PointsPerSecond": 500000,
+          "VerticalFOVUpper": 30,
+          "VerticalFOVLower": -30,
+          "HorizontalFOVStart": -90,
+          "HorizontalFOVEnd": 90,
+          "X": 0.2,
+          "Y": 0,
+          "Z": -0.1,
+          "Pitch": 0,
+          "Roll": 0,
+          "Yaw": 0,
+          "Range": 200,
+          "RangeNoise": 0,
+          "HorizontalRotationFrequency": 0,
+          "DrawDebugPoints": false,
+          "DataFrame": "VehicleInertialFrame"
+        }
+      }
+    },
+    "Drone3": {
+      "VehicleType": "SimpleFlight",
+      "X": 15,
+      "Y": -5,
+      "Z": -2,
+      "Yaw": 0,
+      "AutoCreate": true
+    },
+    "Drone4": {
+      "VehicleType": "SimpleFlight",
+      "X": 20,
+      "Y": 5,
+      "Z": -5,
+      "Yaw": 0,
+      "AutoCreate": true
+    },
+    "Intruder1": {
+      "VehicleType": "SimpleFlight",
+      "X": 10,
+      "Y": 0,
+      "Z": -3,
+      "Yaw": 0,
+      "AutoCreate": true
+    }
+  },
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 1280,
+        "Height": 720,
+        "FOV_Degrees": 90,
+        "TargetGamma": 1.5,
+        "MotionBlurAmount": 0
+      }
+    ]
+  },
+  "SegmentationSettings": {
+    "InitMethod": "CommonObjectsRandomIDs",
+    "MeshNamingMethod": "StaticMeshComponentName"
+  }
+}
