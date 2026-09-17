@@ -11,7 +11,7 @@
 > in-sample caveat for the voxel results. Its own result tables **predate** the
 > dissertation's final numbers and disagree with them; why has not been traced —
 > see "Known discrepancies" in the top-level README.md. Section 13.3 also lists
-> `record_campaign.sh`, which is **not present** in this repository.
+> `record_campaign.sh`, now at `dataset_generation/record_campaign.sh`.
 
 
 > Documento-mestre de referência para a dissertação de mestrado. Reúne, de forma exaustiva e
